@@ -1,43 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:path_provider/path_provider.dart';
-
-// Core Screens
-import 'buysellfiat_screen.dart';
-import 'transfer_screen.dart';
-import 'chat_screen.dart';
+import 'dart:io';
+import 'dependenciesdownloader.dart';
 import 'account_screen.dart';
-import 'settings_screen.dart';
-import 'history_screen.dart';
-import 'trade_screen.dart';
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
-  final storage = FlutterSecureStorage();
-  final defaultMnemonic = 'avoid violin chat cover jacket talk quote aware verb milk example talk win output pudding trick';
-
-  String? mnemonic = await storage.read(key: "user_wallet_mnemonic");
-  if (mnemonic == null) {
-    mnemonic = defaultMnemonic;
-    await storage.write(key: "user_wallet_mnemonic", value: mnemonic);
-    print("🔑 Default mnemonic initialized.");
-  }
-
-  print("🚀 App Starting...");
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'HOpenCrypto',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           color: Colors.black,
           centerTitle: true,
           titleTextStyle: TextStyle(
@@ -47,28 +30,28 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: HomeScreen(),
+      home: const DependenciesDownloader(),
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
-  Widget buildButton(BuildContext context, String title, IconData icon, Widget destination) {
+  const HomeScreen({super.key});
+
+  Widget buildButton(BuildContext context, String title, IconData icon, {VoidCallback? onTap}) {
     return Expanded(
       child: SizedBox.expand(
         child: Container(
-          margin: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+          margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
           child: ElevatedButton.icon(
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => destination));
-            },
+            onPressed: onTap,
             icon: Icon(icon, color: Colors.white),
             label: Text(title, textAlign: TextAlign.center),
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.black,
               foregroundColor: Colors.white,
-              textStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-              side: BorderSide(color: Colors.white, width: 1),
+              textStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              side: const BorderSide(color: Colors.white, width: 1),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
             ),
           ),
@@ -80,19 +63,29 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('HOpenCrypto'), centerTitle: true),
+      appBar: AppBar(title: const Text('HOpenCrypto'), centerTitle: true),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          buildButton(context, "ACCOUNT / WALLET / LOGIN", Icons.account_circle, AccountScreen()),
-          buildButton(context, "CHAT/DISPUTES", Icons.chat_bubble_outline, ChatScreen()),
-          buildButton(context, "TRADE CURRENCY PAIR", Icons.swap_horiz, TradeScreen()),
-          buildButton(context, "TRANSFER / RECEIVE", Icons.send, TransferScreen()),
-          buildButton(context, "BUY / SELL TO FIAT", Icons.attach_money, BuySellFiatScreen()),
-          buildButton(context, "HISTORY", Icons.history, HistoryScreen()),
-          buildButton(context, "SETTINGS", Icons.settings, SettingsScreen()),
-          QuitButton(),
+          buildButton(
+            context,
+            "ACCOUNT / WALLET / LOGIN",
+            Icons.account_circle,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AccountScreen()),
+              );
+            },
+          ),
+          buildButton(context, "CHAT/DISPUTES", Icons.chat_bubble_outline),
+          buildButton(context, "TRADE CURRENCY PAIR", Icons.swap_horiz),
+          buildButton(context, "TRANSFER / RECEIVE", Icons.send),
+          buildButton(context, "BUY / SELL TO FIAT", Icons.attach_money),
+          buildButton(context, "HISTORY", Icons.history),
+          buildButton(context, "SETTINGS", Icons.settings),
+          const QuitButton(),
         ],
       ),
     );
@@ -100,6 +93,7 @@ class HomeScreen extends StatelessWidget {
 }
 
 class QuitButton extends StatefulWidget {
+  const QuitButton({super.key});
   @override
   _QuitButtonState createState() => _QuitButtonState();
 }
@@ -108,17 +102,21 @@ class _QuitButtonState extends State<QuitButton> {
   bool waitingForSecondTap = false;
 
   void attemptQuit() {
-    if (waitingForSecondTap) {
-      SystemNavigator.pop();
+    if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+      // ✅ Desktop: exit the Flutter app only
+      debugPrint("🚪 Exiting Flutter desktop app via exit(0)");
+      exit(0);
     } else {
-      setState(() {
-        waitingForSecondTap = true;
-      });
-      Future.delayed(Duration(seconds: 3), () {
-        setState(() {
-          waitingForSecondTap = false;
+      // ✅ Android/iOS: require double-tap
+      if (waitingForSecondTap) {
+        debugPrint("🚪 Quitting on second tap (mobile)");
+        SystemNavigator.pop(); // Best effort on Android
+      } else {
+        setState(() => waitingForSecondTap = true);
+        Future.delayed(const Duration(seconds: 3), () {
+          if (mounted) setState(() => waitingForSecondTap = false);
         });
-      });
+      }
     }
   }
 
@@ -130,8 +128,8 @@ class _QuitButtonState extends State<QuitButton> {
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
-        textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-        side: BorderSide(color: Colors.white, width: 2),
+        textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        side: const BorderSide(color: Colors.white, width: 2),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       ),
     );

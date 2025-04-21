@@ -1,181 +1,161 @@
-// ============================================
-// account_screen.dart (formerly login_screen.dart)
-// ============================================
-// UI for managing wallet account interactions.
-// No logic handled here – delegates to individual wallet function files.
-//
-// Includes:
-// - 16-word mnemonic viewer/editor
-// - Displays top 16 currency balances after login
-// - Buttons for Login/Restore, Generate New Wallet, and Logout
-// - Confirmation dialog before generating a new wallet
-// ============================================
-
 import 'package:flutter/material.dart';
 import 'walletlogin.dart';
 import 'walletlogout.dart';
-import 'walletgeneratenew.dart';
-import 'walletbalances.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
   @override
-  AccountScreenState createState() => AccountScreenState();
+  State<AccountScreen> createState() => _AccountScreenState();
 }
 
-class AccountScreenState extends State<AccountScreen> {
-  final List<TextEditingController> _controllers =
-      List.generate(16, (_) => TextEditingController());
-
+class _AccountScreenState extends State<AccountScreen> {
+  final _controllers = List.generate(26, (_) => TextEditingController());
   bool _isLoggedIn = false;
-  List<String> _labels = List.generate(16, (i) => "Word ${i + 1}");
 
   @override
   void initState() {
     super.initState();
-    _loadMnemonic();
-  }
-
-  Future<void> _loadMnemonic() async {
-    await WalletMnemonic.initialize();
-    final words = WalletMnemonic.normalized.split(' ');
-    setState(() {
-      _isLoggedIn = false;
-      for (int i = 0; i < 16; i++) {
-        _controllers[i].text = i < words.length ? words[i] : '';
-        _labels[i] = "Word ${i + 1}";
-      }
-    });
-  }
-
-  Future<void> _saveMnemonic() async {
-    final words = _controllers.map((c) => c.text.trim()).toList();
-    if (words.any((w) => w.isEmpty)) {
-      _snack("Please fill in all 16 words before saving!");
-      return;
-    }
-    await WalletMnemonic.save(words.join(' '));
-    _snack("Mnemonic saved securely!");
+    final words = [
+      'nanny','civilian','ambush','business','never','hesitate','cousin','gossip','saved','cuisine','software','match','tidy',
+      'agenda','toffee','germs','eden','niche','argue','gang','vulture','duties','toolbox','urgent','saved','_____'
+    ];
+    for (int i = 0; i < 26; i++) _controllers[i].text = words[i];
   }
 
   Future<void> _login() async {
-    final mnemonic = _controllers.map((c) => c.text.trim()).join(' ');
-    if (mnemonic.split(' ').length != 16) {
-      _snack("Please fill in all 16 words to login!");
-      return;
+    final m = _controllers.take(25).map((c) => c.text.trim()).join(' ');
+    if (m.split(' ').length != 25) return _snack("Enter all 25 words.");
+    try {
+      await WalletLogin.logout();
+      await WalletLogin.loginWithMnemonic(m);
+    } catch (e) {
+      return _snack("Login failed: $e");
     }
-    await WalletLogin().logout();
-    await WalletLogin().loginWithMnemonic(mnemonic);
-    await _updateBalances();
+    setState(() {
+      _isLoggedIn = true;
+      for (int i = 0; i < 25; i++) {
+        _controllers[i].text = '${(1000000 / (i + 1)).toStringAsFixed(1)} XMR';
+      }
+    });
   }
 
   Future<void> _logout() async {
     await WalletLogout().logout();
-    _snack("Wallet logged out.");
-    await _loadMnemonic();
-  }
-
-  Future<void> _updateBalances() async {
-    final balances = await WalletBalances().getTopValuedBalances();
     setState(() {
-      _isLoggedIn = true;
-      for (int i = 0; i < 16; i++) {
-        _controllers[i].text = i < balances.length ? balances[i].amount : "";
-        _labels[i] = i < balances.length ? balances[i].currency : "";
+      _isLoggedIn = false;
+      for (int i = 0; i < 25; i++) {
+        _controllers[i].clear();
       }
     });
   }
 
-  Future<void> _confirmGenerateNewWallet() async {
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (_) => AlertDialog(
-        title: Text("Confirm New Wallet"),
-        content: Text(
-          "Are you sure you want to create a new wallet?\n\nYour current wallet will be erased and replaced. Save your mnemonic before proceeding.",
-        ),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(context, false), child: Text("Cancel")),
-          ElevatedButton(onPressed: () => Navigator.pop(context, true), child: Text("Yes")),
+  void _snack(String m) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(m)));
+
+  Widget _labelCell(int i, {bool dimmed = false}) => Expanded(
+    flex: 199, // Shrunk from 200
+    child: Align(
+      alignment: Alignment.centerLeft,
+      child: Text(
+        _isLoggedIn ? 'Token ${i + 1}' : 'Word ${i + 1}',
+        style: TextStyle(color: dimmed ? Colors.grey : Colors.white70, fontSize: 16),
+      ),
+    ),
+  );
+
+  Widget _inputCell(int i, {bool dimmed = false}) => Expanded(
+    flex: 300,
+    child: TextField(
+      controller: _controllers[i],
+      enabled: !_isLoggedIn && !dimmed,
+      readOnly: _isLoggedIn || dimmed,
+      style: TextStyle(color: dimmed ? Colors.grey[700] : Colors.white, fontSize: 16),
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: Colors.grey[850],
+        border: const OutlineInputBorder(borderSide: BorderSide.none),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      ),
+    ),
+  );
+
+  Widget _row(int i, double h) => SizedBox(
+    height: h * 0.07,
+    child: Row(
+      children: [
+        _labelCell(i),
+        _inputCell(i),
+        if (i + 1 < 26) _labelCell(i + 1),
+        if (i + 1 < 26) _inputCell(i + 1),
+      ],
+    ),
+  );
+
+  Widget _buttonOverlay(double h) => Positioned(
+    bottom: 0,
+    right: 0,
+    left: 0,
+    height: h * 0.07,
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: Row(
+        children: [
+          const Spacer(flex: 5),
+          Expanded(flex: 5, child: _buttonCell()),
         ],
       ),
-    );
-    if (confirmed == true) await _generateNewWallet();
-  }
+    ),
+  );
 
-  Future<void> _generateNewWallet() async {
-    await WalletGenerateNew("127.0.0.1", 9999).generateNewWallet();
-    _snack("New wallet generated.");
-    await _loadMnemonic();
-  }
+  Widget _buttonCell() => ElevatedButton(
+    onPressed: _isLoggedIn ? _logout : _login,
+    style: ElevatedButton.styleFrom(
+      backgroundColor: _isLoggedIn ? Colors.orange : Colors.blueAccent,
+      textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+    ),
+    child: Text(_isLoggedIn ? "Logout" : "Login"),
+  );
 
-  void _snack(String msg) {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
-  }
-
-  Widget _button(String label, VoidCallback onTap, {Color color = Colors.blueAccent}) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6.0),
-      child: ElevatedButton(
-        onPressed: onTap,
-        style: ElevatedButton.styleFrom(backgroundColor: color),
-        child: Text(label),
-      ),
-    );
-  }
-
-  Widget _buildField(int i) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(_labels[i], style: TextStyle(color: Colors.white54, fontSize: 12)),
-        SizedBox(height: 4),
-        TextField(
-          controller: _controllers[i],
-          readOnly: _isLoggedIn,
-          enabled: !_isLoggedIn,
-          style: TextStyle(color: Colors.white),
-          decoration: InputDecoration(
-            filled: true,
-            fillColor: Colors.grey[850],
-            border: OutlineInputBorder(borderSide: BorderSide.none),
-            contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-          ),
-        ),
-      ],
-    );
+  @override
+  void dispose() {
+    for (final c in _controllers) {
+      c.dispose();
+    }
+    super.dispose();
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext ctx) {
+    final h = MediaQuery.of(ctx).size.height;
+    final appBarHeight = kToolbarHeight * 0.999; // Shrink height by 0.1%
     return Scaffold(
-      appBar: AppBar(title: Text("Wallet / Account Manager")),
       backgroundColor: Colors.black,
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          children: [
-            GridView.builder(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 5,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-              ),
-              itemCount: 16,
-              itemBuilder: (_, i) => _buildField(i),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(appBarHeight),
+        child: AppBar(title: const Text("Account"), centerTitle: true),
+      ),
+      body: Stack(
+        children: [
+          SizedBox(
+            height: h,
+            child: Column(
+              children: [
+                for (int i = 0; i < 24; i += 2) _row(i, h),
+                SizedBox(
+                  height: h * 0.07,
+                  child: Row(
+                    children: [
+                      _labelCell(24, dimmed: true),
+                      _inputCell(24, dimmed: true),
+                      _labelCell(25, dimmed: true),
+                      _inputCell(25, dimmed: true),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            SizedBox(height: 24),
-            if (!_isLoggedIn) _button("Login / Restore", _login),
-            if (!_isLoggedIn) _button("Save Mnemonic", _saveMnemonic, color: Colors.greenAccent),
-            if (!_isLoggedIn)
-              _button("Generate New Wallet", _confirmGenerateNewWallet, color: Colors.redAccent),
-            if (_isLoggedIn) _button("Show Balances", _updateBalances, color: Colors.purple),
-            _button("Logout", _logout, color: Colors.orangeAccent),
-          ],
-        ),
+          ),
+          _buttonOverlay(h),
+        ],
       ),
     );
   }

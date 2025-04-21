@@ -1,27 +1,21 @@
 // ============================================
 // walletlogout.dart
 // ============================================
-// Calls Haveno's closeAccount and resets mnemonic to default.
+// Resets mnemonic to default and simulates Haveno logout.
+// Haveno client logic has been removed since 'haveno.dart' is not used.
 // ============================================
 
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:haveno/haveno.dart';
+import 'walletlogin.dart';
 
 class WalletLogout {
-  final _storage = const FlutterSecureStorage();
-  final String _mnemonicKey = "user_wallet_mnemonic";
-  final String _defaultMnemonic =
-      "avoid violin chat cover jacket talk quote aware verb milk example talk win output pudding trick";
-
-  Future<void> logout({String host = "127.0.0.1", int port = 9999}) async {
+  /// Logs out the user by resetting their saved mnemonic.
+  /// Optionally could integrate Haveno daemon's logout method later.
+  Future<void> logout() async {
     try {
-      final client = HavenoClient(host: host, port: port);
-      final accountService = AccountService(client);
-      await accountService.closeAccount();
-      await _storage.write(key: _mnemonicKey, value: _defaultMnemonic);
-      print("🔒 Wallet closed and mnemonic reset.");
+      await WalletLogin.resetMnemonicToDefault();
+      print("🔒 Wallet mnemonic reset to default.");
     } catch (e) {
-      print("❌ Haveno logout error: $e");
+      print("❌ Logout error: $e");
     }
   }
 }
