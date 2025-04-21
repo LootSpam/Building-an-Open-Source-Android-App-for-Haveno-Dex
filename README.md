@@ -30,27 +30,28 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.7.2
 
 dependencies:
-  haveno: ^3.0.4
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.8
-  path_provider: ^2.1.2
-  http: ^0.13.6
-  archive: ^3.3.7
-  permission_handler: ^11.0.1
-  flutter_secure_storage: ^9.2.4
-  bip39: ^1.0.6
-  crypto: ^3.0.6
-  intl: ^0.18.1
-  protobuf: ^3.1.0
 
+  cupertino_icons: ^1.0.8         # iOS-style icons (optional)
+  path_provider: ^2.1.2           # For internal app storage paths
+  http: ^0.13.6                   # For downloading daemon.jar and java
+  archive: ^4.0.5
+  permission_handler: ^11.0.1     # For potential network/storage perms
+  bip39: ^1.0.6                   # For mnemonic generation
+  crypto: ^3.0.6                  # For hashing/signatures
+  intl: ^0.18.1                   # Date/locale formatting
+  protobuf: ^3.1.0               
+  device_info_plus: ^9.0.3        
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+
+  flutter_lints: ^5.0.0           # Recommended Dart lint rules
 
 flutter:
   uses-material-design: true
