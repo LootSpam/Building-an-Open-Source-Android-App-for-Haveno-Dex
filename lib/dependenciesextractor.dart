@@ -162,6 +162,15 @@ for (final dir in dirsToCreate) {
       await _extractBusyboxFromAssets(busyboxDst);
     }
 
+//─────────────────────────────────────────────
+// Ensure uname exists for Tor to detect Linux type
+//─────────────────────────────────────────────
+final unamePath = "$bin/uname";
+if (!await File(unamePath).exists()) {
+  final result = await Process.run(busyboxDst, ["ln", "-sfn", busyboxDst, unamePath]);
+  debugPrint("🔧 Symlinked uname → busybox → ${result.stderr.isEmpty ? '✅ Success' : result.stderr.trim()}");
+}
+
     //─────────────────────────────────────────────
     // Iterate and extract .tar.gz/.xz chunks
     //─────────────────────────────────────────────
@@ -304,7 +313,7 @@ if (await torTarget.exists() && await torTmp.exists()) {
 // Tor Directory Listing
 // ──────────────────────────────────────────────────
 
-debugPrint("🔍 Listing top-level contents of Tor directory:");
+debugPrint("🔍 Listing full contents of Tor directory:");
 await for (final entity in torTarget.list(recursive: false)) {
   final type = entity is Directory ? "📁" : "📄";
   final size = entity is File ? await entity.length() : 0;

@@ -109,8 +109,8 @@ for (final entry in dirsToCheck.entries) {
 // Java_tmp Folder Top-Level Listing
 // ─────────────────────────────────────────────
 
-debugPrint("🔍 Listing top-level contents of Java directory:");
-final javaTop = Directory("$bin/java_tmp/jdk-21.0.6-full/bin");
+debugPrint("🔍 Listing top-level contents of Java_tmp directory:");
+final javaTop = Directory("$bin/java_tmp");
 if (await javaTop.exists()) {
   await for (final entity in javaTop.list(recursive: false)) {
     final type = entity is Directory ? "📁" : "📄";
@@ -154,14 +154,6 @@ try {
   final resolved = await Process.run(busyboxPath, ["readlink", "-f", javaPath]);
   debugPrint("🔗 java resolved path → ${resolved.stdout.trim()}");
 
-  // Check the ELF interpreter
-  final readelf = await Process.run(busyboxPath, ["readelf", "-l", javaPath]);
-  final interp = readelf.stdout.toString().split('\n').firstWhere(
-    (line) => line.contains("interpreter"),
-    orElse: () => "❓ interpreter not found",
-  );
-  debugPrint("📎 ELF interpreter → $interp");
-
   // Check if it's executable
   final testExec = await Process.run(javaPath, ["-version"]);
   debugPrint("🚀 java -version stdout → ${testExec.stdout}");
@@ -178,11 +170,6 @@ try {
 } catch (e) {
   debugPrint("❌ Java diagnostic block failed: $e");
 }
-
-
-
-
-
 
   final javaBinary = File(javaBinaryPath);
   final javaExists = await javaBinary.exists();
@@ -204,6 +191,7 @@ try {
     });
   }
 }
+
 
   // ─────────────────────────────────────────────────────────────
   // Miscellaneous Utilities

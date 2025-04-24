@@ -17,7 +17,7 @@ State<DependenciesDownloader> createState() => _DependenciesDownloaderState();
 class _DependenciesDownloaderState extends State<DependenciesDownloader> {
   final _urls = [
     Uri.parse("https://skirsten.github.io/proot-portable-android-binaries/armv7/proot"),
-    Uri.parse("https://download.bell-sw.com/java/21.0.6+10/bellsoft-jdk21.0.6+10-linux-arm32-vfp-hflt-full.tar.gz"),
+    Uri.parse("https://download.bell-sw.com/java/17.0.15+10/bellsoft-jdk17.0.15+10-linux-arm32-vfp-hflt.tar.gz"),
     Uri.parse("https://cdimage.ubuntu.com/ubuntu-base/releases/jammy/release/ubuntu-base-22.04.5-base-armhf.tar.gz"),
     Uri.parse("https://www.nosignup.trade/monerodaemon/daemon.jar"),
     Uri.parse("https://busybox.net/downloads/binaries/1.31.0-defconfig-multiarch-musl/busybox-armv7l"),
@@ -37,12 +37,20 @@ class _DependenciesDownloaderState extends State<DependenciesDownloader> {
   String _status = "Initializing...", _currentFile = "", _basePath = "", _binPath = "";
   double _progress = 0.0;
 
-  @override
-  void initState() {
-    debugPrint("*****Start of: dependenciesdownloader.dart*****");
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) => _checkPermissionsAndInit());
-  }
+@override
+void initState() {
+  super.initState();
+  debugPrint("*****Start of: dependenciesdownloader.dart*****");
+  _isDownloading = true; // Temporarily disable the button
+  WidgetsBinding.instance.addPostFrameCallback((_) async {
+    await _checkPermissionsAndInit();
+    if (mounted && !_disposed) {
+      setState(() {
+        _isDownloading = false; // Re-enable button only if truly needed
+      });
+    }
+  });
+}
 
   @override
   void dispose() {
@@ -186,7 +194,7 @@ Future<void> _checkPermissionsAndInit() async {  //Note: This method is British 
         } else {
           debugPrint("⚠️ Skipping chmod for $name on Windows.");
         }
-      } // 👈 CLOSES the `for` loop here
+      } // 👈 CLOSES the for loop here
 
       debugPrint("✅ All dependencies downloaded!");
       debugPrint("📁 basePath: $_basePath");

@@ -1,0 +1,333 @@
+
+c:\FlutterProjects\hopencrypto>flutter run
+Launching lib\main.dart on Redmi 4A in debug mode...
+Running Gradle task 'assembleDebug'...                             14.2s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...          13.7s
+Syncing files to device Redmi 4A...                                161ms
+
+Flutter run key commands.
+r Hot reload.
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on Redmi 4A is available at: http://127.0.0.1:60766/Qx25vN6qlxA=/
+I/flutter (23657): *****Start of: dependenciesdownloader.dart*****
+I/Choreographer(23657): Skipped 591 frames!  The application may be doing too much work on its main thread.
+The Flutter DevTools debugger and profiler on Redmi 4A is available at: http://127.0.0.1:9100?uri=http://127.0.0.1:60766/Qx25vN6qlxA=/
+I/OpenGLRenderer(23657): Initialized EGL, version 1.4
+D/OpenGLRenderer(23657): Swap behavior 1
+W/Adreno-ES20(23657): <get_gpu_clk:229>: open failed: errno 13
+I/Choreographer(23657): Skipped 38 frames!  The application may be doing too much work on its main thread.
+I/flutter (23657): 📁 basePath: /data/user/0/com.example.hopencrypto/files/proot_bin
+I/flutter (23657): 📁 binPath: /data/user/0/com.example.hopencrypto/files/proot_bin
+I/flutter (23657): 📦 Check: proot → exists=true, size=538832
+I/flutter (23657): 📁 Path: /data/user/0/com.example.hopencrypto/files/proot_bin/proot
+I/flutter (23657): 📦 Check: java.tar.gz → exists=true, size=190275769
+I/flutter (23657): 📁 Path: /data/user/0/com.example.hopencrypto/files/proot_bin/java.tar.gz
+I/flutter (23657): 📦 Check: rootfs.tar.gz → exists=true, size=26885935
+I/flutter (23657): 📁 Path: /data/user/0/com.example.hopencrypto/files/proot_bin/rootfs.tar.gz
+I/flutter (23657): 📦 Check: daemon.jar → exists=true, size=174943295
+I/flutter (23657): 📁 Path: /data/user/0/com.example.hopencrypto/files/proot_bin/daemon.jar
+I/flutter (23657): 📦 Check: busybox → exists=true, size=1152216
+I/flutter (23657): 📁 Path: /data/user/0/com.example.hopencrypto/files/proot_bin/busybox
+I/flutter (23657): 📦 Check: tor.tar.xz → exists=true, size=107514516
+I/flutter (23657): 📁 Path: /data/user/0/com.example.hopencrypto/files/proot_bin/tor.tar.xz
+I/flutter (23657): *****Start of: dependenciesextractor.dart*****
+I/flutter (23657): 📁 Exists: /data/user/0/com.example.hopencrypto/files/proot_bin/tmp
+I/flutter (23657): 📁 Exists: /data/user/0/com.example.hopencrypto/files/proot_bin/daemon
+I/flutter (23657): 📁 Exists: /data/user/0/com.example.hopencrypto/files/proot_bin/rootfs
+I/flutter (23657): 📁 Exists: /data/user/0/com.example.hopencrypto/files/proot_bin/java_tmp
+I/flutter (23657): 📁 Exists: /data/user/0/com.example.hopencrypto/files/proot_bin/java
+I/flutter (23657): 📁 Exists: /data/user/0/com.example.hopencrypto/files/proot_bin/tor_tmp
+I/flutter (23657): 📁 Exists: /data/user/0/com.example.hopencrypto/files/proot_bin/tor
+I/flutter (23657): 📁 Exists: /data/user/0/com.example.hopencrypto/files/proot_bin/host_tmp
+I/flutter (23657): ✅ rootfs.tar.gz already extracted. Skipping.
+I/flutter (23657): ✅ java.tar.gz already extracted. Skipping.
+I/flutter (23657): ✅ tor.tar.xz already extracted. Skipping.
+I/flutter (23657): ✅ daemon.jar already present. Skipping copy.
+I/flutter (23657): 📦 Java already flattened → /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/java
+I/flutter (23657): ℹ️ Tor directory already populated. Skipping flattening.
+I/flutter (23657): 🔍 Listing full contents of Tor directory:
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/tor/Browser
+I/flutter (23657): 🔍 Listing top-level contents of proot_bin:
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/tmp
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/proot → 538832 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java.tar.gz → 190275769 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/rootfs.tar.gz → 26885935 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/daemon.jar → 174943295 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/busybox → 1152216 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/tor.tar.xz → 107514516 bytes
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/daemon
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/rootfs
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/java_tmp
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/java
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/tor_tmp
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/tor
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/host_tmp
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/uname → 1152216 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/haveno.pid → 5 bytes
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/lib
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/usr
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/bin
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/dev
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/host
+I/flutter (23657): ✅ Forced chmod +x on java binary (final sanity)
+I/flutter (23657): 🧾 java perms after chmod: -rwxr-xr-x 1 u0_a188 u0_a188 8120 2025-04-23 20:39 /da ta/user/0/com.example.hopencrypto/files/proot_bin/java/bin/java
+I/flutter (23657): *****Start of: dependenciesextractor_stage2.dart*****
+I/flutter (23657): 📦 proot → /data/user/0/com.example.hopencrypto/files/proot_bin/proot → 538832 bytes
+I/flutter (23657): 📦 busybox → /data/user/0/com.example.hopencrypto/files/proot_bin/busybox → 1152216 bytes
+I/flutter (23657): 📦 daemon → /data/user/0/com.example.hopencrypto/files/proot_bin/daemon/daemon.jar → 174943295 bytes
+I/flutter (23657): 📦 java tar → /data/user/0/com.example.hopencrypto/files/proot_bin/java.tar.gz → 190275769 bytes
+I/flutter (23657): 📦 rootfs tar → /data/user/0/com.example.hopencrypto/files/proot_bin/rootfs.tar.gz → 26885935 bytes
+I/flutter (23657): 📁 Java folder: /data/user/0/com.example.hopencrypto/files/proot_bin/java → 246 files
+I/flutter (23657): 📁 Java_tmp folder: /data/user/0/com.example.hopencrypto/files/proot_bin/java_tmp → 448 files
+I/flutter (23657): 📁 RootFS folder: /data/user/0/com.example.hopencrypto/files/proot_bin/rootfs → 4330 files
+I/flutter (23657): 📁 Tor Browser folder: /data/user/0/com.example.hopencrypto/files/proot_bin/tor/Browser → 26 files
+I/flutter (23657): 📦 Java binary → /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/java → 8120 bytes
+I/flutter (23657): 📦 RootFS linker → /data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/usr/lib/ld-linux-armhf.so.3 → 1175108 bytes
+I/flutter (23657): 🔍 Listing top-level contents of Java_tmp directory:
+I/flutter (23657): 📁 /data/user/0/com.example.hopencrypto/files/proot_bin/java_tmp/jdk-17.0.15
+I/flutter (23657): 🔍 Listing contents of Java /bin directory:
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/java → 8120 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jarsigner → 8132 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/keytool → 8132 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jconsole → 8156 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jrunscript → 8144 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jar → 8128 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/rmiregistry → 8136 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/serialver → 8132 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jstatd → 8132 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jcmd → 8128 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/javap → 8128 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jstat → 8128 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jmod → 8128 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jdb → 8128 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jps → 8128 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jimage → 8132 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/javac → 8136 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jpackage → 8132 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jshell → 8132 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jdeprscan → 8132 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jdeps → 8128 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jlink → 8136 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jmap → 8136 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jhsdb → 8128 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/javadoc → 8140 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jinfo → 8136 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jstack → 8140 bytes
+I/flutter (23657): 📄 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/jfr → 8128 bytes
+I/flutter (23657): 🧪 Java Diagnostics: Starting checks on /data/user/0/com.example.hopencrypto/file s/proot_bin/java/bin/java
+I/flutter (23657): 🔍 ls -l java → -rwxr-xr-x    1 10188    10188         8120 Apr 24 00:39 /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/java
+I/flutter (23657):
+I/flutter (23657): 🔗 java resolved path → /data/data/com.example.hopencrypto/files/proot_bin/java/bin/java
+I/flutter (23657): ❌ Java diagnostic block failed: ProcessException: No such file or directory
+I/flutter (23657):   Command: /data/user/0/com.example.hopencrypto/files/proot_bin/java/bin/java -version
+I/flutter (23657): *****Start of: dependenciesrun.dart*****
+I/flutter (23657): 🧪 Pre-launch: Starting Haveno Daemon early for ping check...
+I/flutter (23657): 🔧 Copied busybox → uname binary and set executable
+I/flutter (23657): 🔧 Injected fake uname script inside rootfs to bypass Tor detection
+I/flutter (23657): 🧪 uname test stdout: ${test.stdout}
+I/flutter (23657): ! uname test stderr: ${test.stderr}
+I/flutter (23657): 🛡️ Watchdog started... polling every 10s
+I/flutter (23657): ⏳ Starting Proot...
+I/flutter (23657): 📦 proot → exists=true, size=538832 bytes, path=${proot.path}
+I/flutter (23657): ✅ Proot step completed.
+I/flutter (23657): ⏳ Starting Linux Sandbox...
+I/flutter (23657): 📄 /bin/sh exists=true @ ${shell.path}
+I/flutter (23657): 📄 ld-linux-armhf.so.3 exists=true @ ${linker.path}
+I/flutter (23657): ✅ Linux Sandbox step completed.
+I/flutter (23657): ⏳ Starting Java...
+I/flutter (23657): 📦 Java → exists=true, size=8120 bytes, path=${javaBin.path}
+I/flutter (23657): ✅ Java step completed.
+D/ProfileInstaller(23657): Installing profile for com.example.hopencrypto
+V/BoostFramework(23657): BoostFramework() : mPerf = com.qualcomm.qti.Performance@c908c73
+I/flutter (23657): 🔍 Checking daemon status via haveno.pid...
+I/flutter (23657): ! PID 22891 not found in process list.
+I/flutter (23657): ! Daemon process not found — restarting Haveno Daemon...
+I/flutter (23657): 🚨 Relaunching Haveno Daemon with:
+I/art     (23657): Do partial code cache collection, code=13KB, data=30KB
+I/art     (23657): After code cache collection, code=13KB, data=30KB
+I/art     (23657): Increasing code cache capacity to 128KB
+I/flutter (23657):    /data/user/0/com.example.hopencrypto/files/proot_bin/proot -0 -r /data/user/0/com.example.hopencrypto/files/proot_bin --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/lib:/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/usr/lib:/usr/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/tmp:/tmp --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/uname:/bin/uname --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/daemon:/daemon --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/busybox:/busybox --bind=/dev/null:/dev/null -w /tmp /java/bin/java -cp /daemon/daemon.jar haveno.core.app.HavenoHeadlessAppMain --apiPassword=hopen --useDevMode=true --useDevModeHeader=true --useDevPrivilegeKeys=true --ignoreDevMsg=true --logLevel=DEBUG --appName=HOpenCrypto --userDataDir=/host/tmp --appDataDir=/host/tmp
+I/flutter (23657): 🔁 Watchdog restarted Haveno Daemon with PID 23933 at 2025-04-24 14:05:52.553735.
+I/flutter (23657): 📋 [Watchdog] ps -ef:
+I/flutter (23657): PID   USER     TIME  COMMAND
+I/flutter (23657): 23657 10188     0:22 {ple.hopencrypto} com.example.hopencrypto
+I/flutter (23657): 23933 10188     0:00 /data/user/0/com.example.hopencrypto/files/proot_bin/proot -0 -r /data/user/0/com.example.hopencrypto/files/proot_bin --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/lib:/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/usr/lib:/usr/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/tmp:/tmp --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/uname:/bin/uname --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/daemon:/daemon --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/busybox:/busybox --bind=/dev/null:/dev/null -w /tmp /java/bin/java -cp /daemon/daemon.jar haveno.core.app.HavenoHeadlessAppMain --apiPassword=hopen --useDevMode=true --useDevModeHeader=true --useDevPrivilegeKeys=true --ignoreDevMsg=true --logLevel=DEBUG --appName=HOpenCrypto --userDataDir=/host/tmp --appDataDir=/host/tmp
+I/flutter (23657): 23935 10188     0:00 /java/bin/java -cp /daemon/daemon.jar haveno.core.app.HavenoHeadlessAppMain --apiPassword=hopen --useDevMode=true --useDevModeHeader=true --useDevPrivilegeKeys=true --ignoreDevMsg=true --logLevel=DEBUG --appName=HOpenCrypto --userDataDir=/host/tmp --appDataDir=/host/tmp
+I/flutter (23657): 23936 10188     0:00 /data/user/0/com.example.hopencrypto/files/proot_bin/busybox ps -ef
+I/flutter (23657):
+I/flutter (23657): 📋 [Watchdog] ps stderr:
+I/flutter (23657):
+I/flutter (23657): 📡 [Watchdog] Netstat:
+I/flutter (23657): Active Internet connections (only servers)
+I/flutter (23657): Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+I/flutter (23657): tcp        0      0 127.0.0.1:48721         0.0.0.0:*               LISTEN      23657/com.example.h
+I/flutter (23657):
+D/InputConnectionAdaptor(23657): The input method toggled cursor monitoring on
+I/flutter (23657): 🔍 Checking daemon status via haveno.pid...
+I/flutter (23657): 🔍 PID 23933 is still running. Line: 23933 10188     0:00 /data/user/0/com.example.hopencrypto/files/proot_bin/proot -0 -r /data/user/0/com.example.hopencrypto/files/proot_bin --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/lib:/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/usr/lib:/usr/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/tmp:/tmp --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/uname:/bin/uname --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/daemon:/daemon --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/busybox:/busybox --bind=/dev/null:/dev/null -w /tmp /java/bin/java -cp /daemon/daemon.jar haveno.core.app.HavenoHeadlessAppMain --apiPassword=hopen --useDevMode=true --useDevModeHeader=true --useDevPrivilegeKeys=true --ignoreDevMsg=true --logLevel=DEBUG --appName=HOpenCrypto --userDataDir=/host/tmp --appDataDir=/host/tmp
+I/flutter (23657): ✅ Haveno Daemon is marked as running (process alive).
+I/flutter (23657): 🔍 Checking daemon status via haveno.pid...
+I/flutter (23657): 🔍 PID 23933 is still running. Line: 23933 10188     0:00 /data/user/0/com.example.hopencrypto/files/proot_bin/proot -0 -r /data/user/0/com.example.hopencrypto/files/proot_bin --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/lib:/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/usr/lib:/usr/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/tmp:/tmp --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/uname:/bin/uname --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/daemon:/daemon --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/busybox:/busybox --bind=/dev/null:/dev/null -w /tmp /java/bin/java -cp /daemon/daemon.jar haveno.core.app.HavenoHeadlessAppMain --apiPassword=hopen --useDevMode=true --useDevModeHeader=true --useDevPrivilegeKeys=true --ignoreDevMsg=true --logLevel=DEBUG --appName=HOpenCrypto --userDataDir=/host/tmp --appDataDir=/host/tmp
+I/flutter (23657): ✅ Haveno Daemon is marked as running (process alive).
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:12.895 [main] INFO  haveno.common.util.Utilities: System info: os.name=Linux; os.version=3.18.31-perf-g9f3facd; os.arch=arm; sun.arch.data.model=32; JRE=17.0.15+10-LTS (BellSoft); JVM=17.0.15+10-LTS (OpenJDK 32-Bit Server VM)
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:13.488 [main] INFO  haveno.common.app.AsciiLogo:
+I/flutter (23657):
+I/flutter (23657):
+I/flutter (23657):
+I/flutter (23657):
+I/flutter (23657):                                                    0X
+I/flutter (23657):                                               OOdolcck
+I/flutter (23657):                                        KXKNN0occcccccck:   :Kxxk0d
+I/flutter (23657):                                      klccccccccccccccccck0xcccccccxK'
+I/flutter (23657):                                     xccccccccccccccclOKKOocccccccccclxK
+I/flutter (23657):                                   .xccccccccccccccclWMMMMMd:::::::::ccco
+I/flutter (23657):                                  'dccccccc:::cccccclWMMMMMo:::::::::::cc;
+I/flutter (23657):                                 ,occccc:::::::::::::cxO0kl:::::::::::::cd
+I/flutter (23657):                                ;occccc:::::cddddddc;;;;;;;;:ddddddl:::::coldOK
+I/flutter (23657):                               :occccc::::::xMMMMMMo,,,,,,,,cMMMMMMk::::::cccccoOc
+I/flutter (23657):                              llccccc:::::;;dMMMMMMo,,,,,,,,cMMMMMMk:::::::cccccc,
+I/flutter (23657):                              'cccccc::::;,,dMMMMMMl'''''',,cMMMMMMk::::::::ccccc.
+I/flutter (23657):                              .cccccc::::,,,dMMMMMMo'''''',,cMMMMMMk::::::::ccccc
+I/flutter (23657):                               :ccccc:::::;;dMMMMMM0xxxxxxxxOMMMMMMk::::::::ccc'
+I/flutter (23657):                               ;ccccc:::::::xMMMMMMMMMMMMMMMMMMMMMMk::::::ccccco
+I/flutter (23657):                               'ccccc:::::::xMMMMMMMMMMMMMMMMMMMMMMk:::::ccccccco
+I/flutter (23657):                               .ccccccc:::::xMMMMMMd::::::::oMMMMMMk:::::ccccccc
+I/flutter (23657):                                :cccccccc:::xMMMMMMo,,,,,,,,cMMMMMMk:::::cccccc
+I/flutter (23657):                                 cccccccccc:xMMMMMMo,,,,,,,,cMMMMMMk::::cccccc
+I/flutter (23657):                                 :ccccccccccxMMMMMMo,,,,,,,,cMMMMMMO:cccccccc
+I/flutter (23657):                                  ccccccccccxMMMMMMd;;;;;;;:lMMMMMMOcccccccc
+I/flutter (23657):                                     ccccccclooooooc::::::::cddddddlcccccc:
+I/flutter (23657):                                       .ccccc::::::::::::::ccccccccccccccc
+I/flutter (23657):                                          :cccc:::::::::::ccccccccccccc
+I/flutter (23657):                                            .cccc:::::::ccccccccccc,
+I/flutter (23657):                                               'ccccccccccccc.
+I/flutter (23657):                                                   ;ccccc:
+I/flutter (23657):
+I/flutter (23657):
+I/flutter (23657):
+I/flutter (23657):
+I/flutter (23657):                  .XXX.   .XXX.    .XXXk  dXX0     ;XXX.KXXXXXX, xXX0     :XX0    ,XK000KK
+I/flutter (23657):                  .ccc.   .ccc.    xccccc  ;cco   .occ. ccccccc. :cccdo   ;cc:  oxlccccccco0.
+I/flutter (23657):                  .ccc.   .ccc.   dcc'ccl.  :ccl  dcc.  ccc'     :cccccO. ;cc: lccc      'ccd
+I/flutter (23657):                  .ccclllllccc.  ccc: .ccx  .ccl,dcc'   cccllll. :cc, ccox;cc: :cc:      .ccc.
+I/flutter (23657):                  .ccc     ccc. 'lccl0kcccd  .cclcc,    ccc.     :cc;  .ccocc: .ccco     kcc:
+I/flutter (23657):                  .ccc.   .ccc. dcc.    :ccl  .ccc;     cccd000' :cc;    cccc:   cccxO0kocc,
+I/flutter (23657):                                                                                    :ccc.
+I/flutter (23657):
+I/flutter (23657):
+I/flutter (23657):
+I/flutter (23657):
+I/flutter (23657):
+I/flutter (23657):
+I/flutter (23657):
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:13.529 [main] INFO  haveno.common.app.Version: Version{VERSION=1.0.19, P2P_NETWORK_VERSION=A, LOCAL_DB_VERSION=1, TRADE_PROTOCOL_VERSION=2, BASE_CURRENCY_NETWORK=0, getP2PNetworkId()=0A}
+I/flutter (23657): Apr-24 18:06:13.534 [main] INFO  h.common.setup.CommonSetup: Path to Haveno jar file: /daemon/daemon.jar
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:13.586 [main] INFO  haveno.common.util.Profiler: Total memory: 30 MB; Used memory: 11.208 MB; Free memory: 18.792 MB; Max memory: 466 MB; No. of threads: 1
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:13.669 [main] INFO  h.c.s.CoreNetworkCapabilities: TRADE_STATISTICS [0], TRADE_STATISTICS_2 [1], ACCOUNT_AGE_WITNESS [2], PROPOSAL [5], BLIND_VOTE [6], ACK_MSG [7], BUNDLE_OF_ENVELOPES [10], SIGNED_ACCOUNT_AGE_WITNESS [11], MEDIATION [12], REFUND_AGENT [13], TRADE_STATISTICS_HASH_UPDATE [14], NO_ADDRESS_PRE_FIX [15], TRADE_STATISTICS_3 [16]
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:13.713 [main] INFO  h.core.locale.GlobalSettings: Locale info: en_US
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:19.675 [main] INFO  h.core.app.HavenoExecutable: Account already exists, attempting to open
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:19.918 [main] INFO  h.c.n.p.s.DefaultSeedNodeRepository: Seed nodes: [placeholder.onion:8000]
+I/flutter (23657):
+I/flutter (23657): 🔍 Checking daemon status via haveno.pid...
+I/flutter (23657): 🔍 PID 23933 is still running. Line: 23933 10188     0:00 /data/user/0/com.example.hopencrypto/files/proot_bin/proot -0 -r /data/user/0/com.example.hopencrypto/files/proot_bin --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/lib:/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/usr/lib:/usr/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/tmp:/tmp --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/uname:/bin/uname --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/daemon:/daemon --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/busybox:/busybox --bind=/dev/null:/dev/null -w /tmp /java/bin/java -cp /daemon/daemon.jar haveno.core.app.HavenoHeadlessAppMain --apiPassword=hopen --useDevMode=true --useDevModeHeader=true --useDevPrivilegeKeys=true --ignoreDevMsg=true --logLevel=DEBUG --appName=HOpenCrypto --userDataDir=/host/tmp --appDataDir=/host/tmp
+I/flutter (23657): ✅ Haveno Daemon is marked as running (process alive).
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:22.157 [main] INFO  h.c.p.ProvidersRepository: Selected price provider: http://lrrgpezvdrbpoqvkavzobmj7dr2otxc5x6wgktrw337bk6mxsvfp5yid.onion/
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:22.160 [main] DEBUG h.c.p.HttpClientProvider: PriceProvider with baseUrl http://lrrgpezvdrbpoqvkavzobmj7dr2otxc5x6wgktrw337bk6mxsvfp5yid.onion/
+I/flutter (23657):
+D/InputConnectionAdaptor(23657): The input method toggled cursor monitoring off
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:22.591 [HavenoHeadlessAppMain] WARN  haveno.core.user.Preferences: No provided nodes available, switching to public nodes
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:23.109 [HavenoHeadlessAppMain] INFO  h.core.app.AppStartupState: Combined initialized state = false = updatedDataReceived=false && isBlockDownloadComplete=false && isWalletSynced=false && hasSufficientPeersForBroadcast=false && allDomainServicesInitialized=false
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:23.174 [HavenoHeadlessAppMain] DEBUG h.n.p.s.p.StoreService: We copy resource to file: resourceFileName=SignedWitnessStore_XMR_MAINNET, destinationFile=/host/tmp/xmr_mainnet/db/SignedWitnessStore
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:23.190 [HavenoHeadlessAppMain] DEBUG h.n.p.s.p.StoreService: Could not find resourceFile SignedWitnessStore_XMR_MAINNET. That is expected if none is provided yet.
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:23.215 [HavenoHeadlessAppMain] DEBUG h.n.p.s.p.HistoricalDataStoreService: We have created the TradeStatistics3Store store for the live data and filled it with 0 entries from the persisted data.
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:23.235 [HavenoHeadlessAppMain] DEBUG h.n.p.s.p.StoreService: We copy resource to file: resourceFileName=TradeStatistics3Store_0.0.1_XMR_MAINNET, destinationFile=/host/tmp/xmr_mainnet/db/TradeStatistics3Store_0.0.1
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:23.238 [HavenoHeadlessAppMain] DEBUG h.n.p.s.p.StoreService: Could not find resourceFile TradeStatistics3Store_0.0.1_XMR_MAINNET. That is expected if none is provided yet.
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:23.249 [HavenoHeadlessAppMain] DEBUG h.n.p.s.p.HistoricalDataStoreService: We have created the AccountAgeWitnessStore store for the live data and filled it with 0 entries from the persisted data.
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:23.251 [HavenoHeadlessAppMain] DEBUG h.n.p.s.p.StoreService: We copy resource to file: resourceFileName=AccountAgeWitnessStore_0.0.1_XMR_MAINNET, destinationFile=/host/tmp/xmr_mainnet/db/AccountAgeWitnessStore_0.0.1
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:23.258 [HavenoHeadlessAppMain] DEBUG h.n.p.s.p.StoreService: Could not find resourceFile AccountAgeWitnessStore_0.0.1_XMR_MAINNET. That is expected if none is provided yet.
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:23.266 [HavenoHeadlessAppMain] INFO  haveno.core.app.HavenoSetup: Installing monerod
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:23.279 [HavenoHeadlessAppMain] WARN  haveno.core.app.HavenoSetup: Failed to install Monero binaries: Resource not found: path = bin/monerod
+I/flutter (23657):  haveno.common.file.ResourceNotFoundException: Resource not found: path = bin/monerod
+I/flutter (23657):      at haveno.common.file.FileUtil.resourceToFile(FileUtil.java:194)
+I/flutter (23657):      at haveno.core.app.HavenoSetup.maybeInstallDependencies(HavenoSetup.java:375)
+I/flutter (23657):      at haveno.core.app.HavenoSetup.step3(HavenoSetup.java:331)
+I/flutter (23657):      at haveno.network.p2p.storage.P2PDataStorage.lambda$readFromResources$2(P2PDataStorage.java:217)
+I/flutter (23657):      at com.sun.javafx.binding.ExpressionHelper$SingleChange.fireValueChangedEvent(ExpressionHelper.java:192)
+I/flutter (23657):      at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:91)
+I/flutter (23657):      at javafx.beans.binding.ObjectBinding.invalidate(ObjectBinding.java:192)
+I/flutter (23657):      at com.sun.javafx.binding.BindingHelperObserver.invalidated(BindingHelperObserver.java:52)
+I/flutter (23657):      at com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:147)
+I/flutter (23657):      at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:91)
+I/flutter (23657):      at javafx.beans.property.BooleanPropertyBase.fireValueChangedEvent(BooleanPropertyBase.java:104)
+I/flutter (23657):      at javafx.beans.property.BooleanPropertyBase.markInvalid(BooleanPropertyBase.java:111)
+I/flutter (23657):      at javafx.beans.property.BooleanPropertyBase.set(BooleanPropertyBase.java:145)
+I/flutter (23657):      at haveno.network.p2p.storage.P2PDataStorage.lambda$readFromResources$3(P2PDataStorage.java:221)
+I/flutter (23657):      at haveno.network.p2p.storage.persistence.AppendOnlyDataStoreService.lambda$readFromResources$0(AppendOnlyDataStoreService.java:66)
+I/flutter (23657):      at haveno.network.p2p.storage.persistence.HistoricalDataStoreService.lambda$readFromResources$2(HistoricalDataStoreService.java:160)
+I/flutter (23657):      at haveno.common.UserThread.lambda$execute$0(UserThread.java:64)
+I/flutter (23657):      at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+I/flutter (23657):      at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+I/flutter (23657):      at java.base/java.lang.Thread.run(Thread.java:840)
+I/flutter (23657):
+I/flutter (23657): haveno.common.file.ResourceNotFoundException: Resource not found: path = bin/monerod
+I/flutter (23657):      at haveno.common.file.FileUtil.resourceToFile(FileUtil.java:194)
+I/flutter (23657):      at haveno.core.app.HavenoSetup.maybeInstallDependencies(HavenoSetup.java:375)
+I/flutter (23657):      at haveno.core.app.HavenoSetup.step3(HavenoSetup.java:331)
+I/flutter (23657):      at haveno.network.p2p.storage.P2PDataStorage.lambda$readFromResources$2(P2PDataStorage.java:217)
+I/flutter (23657):      at com.sun.javafx.binding.ExpressionHelper$SingleChange.fireValueChangedEvent(ExpressionHelper.java:192)
+I/flutter (23657):      at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:91)
+I/flutter (23657):      at javafx.beans.binding.ObjectBinding.invalidate(ObjectBinding.java:192)
+I/flutter (23657):      at com.sun.javafx.binding.BindingHelperObserver.invalidated(BindingHelperObserver.java:52)
+I/flutter (23657):      at com.sun.javafx.binding.ExpressionHelper$SingleInvalidation.fireValueChangedEvent(ExpressionHelper.java:147)
+I/flutter (23657):      at com.sun.javafx.binding.ExpressionHelper.fireValueChangedEvent(ExpressionHelper.java:91)
+I/flutter (23657):      at javafx.beans.property.BooleanPropertyBase.fireValueChangedEvent(BooleanPropertyBase.java:104)
+I/flutter (23657):      at javafx.beans.property.BooleanPropertyBase.markInvalid(BooleanPropertyBase.java:111)
+I/flutter (23657):      at javafx.beans.property.BooleanPropertyBase.set(BooleanPropertyBase.java:145)
+I/flutter (23657):      at haveno.network.p2p.storage.P2PDataStorage.lambda$readFromResources$3(P2PDataStorage.java:221)
+I/flutter (23657):      at haveno.network.p2p.storage.persistence.AppendOnlyDataStoreService.lambda$readFromResources$0(AppendOnlyDataStoreService.java:66)
+I/flutter (23657):      at haveno.network.p2p.storage.persistence.HistoricalDataStoreService.lambda$readFromResources$2(HistoricalDataStoreService.java:160)
+I/flutter (23657):      at haveno.common.UserThread.lambda$execute$0(UserThread.java:64)
+I/flutter (23657):      at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+I/flutter (23657):      at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+I/flutter (23657):      at java.base/java.lang.Thread.run(Thread.java:840)
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:23.304 [HavenoHeadlessAppMain] INFO  haveno.core.app.HavenoSetup: Init P2P network
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:23.368 [StartTor-0] INFO  h.network.p2p.network.NewTor: Starting tor
+I/flutter (23657):
+I/flutter (23657): 📤 [daemon stdout] Apr-24 18:06:23.372 [HavenoHeadlessAppMain] INFO  haveno.core.app.HavenoSetup: walletInitialized=false, p2pNetWorkReady=false
+I/flutter (23657):
+I/flutter (23657): 🔍 Checking daemon status via haveno.pid...
+I/flutter (23657): 🔍 PID 23933 is still running. Line: 23933 10188     0:00 /data/user/0/com.example.hopencrypto/files/proot_bin/proot -0 -r /data/user/0/com.example.hopencrypto/files/proot_bin --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/lib:/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/usr/lib:/usr/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/tmp:/tmp --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/uname:/bin/uname --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/daemon:/daemon --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/busybox:/busybox --bind=/dev/null:/dev/null -w /tmp /java/bin/java -cp /daemon/daemon.jar haveno.core.app.HavenoHeadlessAppMain --apiPassword=hopen --useDevMode=true --useDevModeHeader=true --useDevPrivilegeKeys=true --ignoreDevMsg=true --logLevel=DEBUG --appName=HOpenCrypto --userDataDir=/host/tmp --appDataDir=/host/tmp
+I/flutter (23657): ✅ Haveno Daemon is marked as running (process alive).
+I/flutter (23657): 🔍 Checking daemon status via haveno.pid...
+I/flutter (23657): 🔍 PID 23933 is still running. Line: 23933 10188     0:00 /data/user/0/com.example.hopencrypto/files/proot_bin/proot -0 -r /data/user/0/com.example.hopencrypto/files/proot_bin --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/lib:/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/usr/lib:/usr/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/tmp:/tmp --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/uname:/bin/uname --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/daemon:/daemon --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/busybox:/busybox --bind=/dev/null:/dev/null -w /tmp /java/bin/java -cp /daemon/daemon.jar haveno.core.app.HavenoHeadlessAppMain --apiPassword=hopen --useDevMode=true --useDevModeHeader=true --useDevPrivilegeKeys=true --ignoreDevMsg=true --logLevel=DEBUG --appName=HOpenCrypto --userDataDir=/host/tmp --appDataDir=/host/tmp
+I/flutter (23657): ✅ Haveno Daemon is marked as running (process alive).
+I/flutter (23657): 🔍 Checking daemon status via haveno.pid...
+I/flutter (23657): 🔍 PID 23933 is still running. Line: 23933 10188     0:00 /data/user/0/com.example.hopencrypto/files/proot_bin/proot -0 -r /data/user/0/com.example.hopencrypto/files/proot_bin --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/lib:/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/usr/lib:/usr/lib --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/rootfs/tmp:/tmp --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/uname:/bin/uname --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/daemon:/daemon --bind=/data/user/0/com.example.hopencrypto/files/proot_bin/busybox:/busybox --bind=/dev/null:/dev/null -w /tmp /java/bin/java -cp /daemon/daemon.jar haveno.core.app.HavenoHeadlessAppMain --apiPassword=hopen --useDevMode=true --useDevModeHeader=true --useDevPrivilegeKeys=true --ignoreDevMsg=true --logLevel=DEBUG --appName=HOpenCrypto --userDataDir=/host/tmp --appDataDir=/host/tmp
+I/flutter (23657): ✅ Haveno Daemon is marked as running (process alive).
